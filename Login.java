@@ -12,7 +12,6 @@ import io.cucumber.java.en.*;
 public class Login {
 	WebDriver driver = null;
 	
-	@SuppressWarnings("deprecation")
 	@Given("user is on login page")
 	public void user_is_on_login_page() {
 		System.setProperty("webdriver.chrome.driver", "C://automation//chromedriver_win32//chromedriver.exe");
@@ -48,10 +47,6 @@ public class Login {
 	}
 	
 	
-	
-	
-	
-	@SuppressWarnings("deprecation")
 	@Given("user is on the login page")
 	public void user_is_on_the_login_page() {
 		System.setProperty("webdriver.chrome.driver", "C://automation//chromedriver_win32//chromedriver.exe");
