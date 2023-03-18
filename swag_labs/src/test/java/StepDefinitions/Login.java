@@ -1,29 +1,32 @@
 package StepDefinitions;
 
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import io.cucumber.java.en.*;
+import org.openqa.selenium.chrome.ChromeOptions;
 
+import io.cucumber.java.en.*;
 import pages.LoginPage;
 
 public class Login {
 	WebDriver driver = null;
 	LoginPage login;
 	
-	@SuppressWarnings("deprecation")
 	@Given("^user is on login page$")
 	public void user_is_on_login_page() {
-		System.setProperty("webdriver.chrome.driver", "C://automation//chromedriver_win32//chromedriver.exe");
-		driver = new ChromeDriver();
+		ChromeOptions co = new ChromeOptions();
+		co.addArguments("--remote-allow-origins=*") ;
+		driver= new ChromeDriver(co);
+//		System.setProperty("webdriver.chrome.driver", "C://automation//chromedriver_win32//chromedriver.exe");
+//		driver = new ChromeDriver();
 //		System.setProperty("webdriver.edge.driver","C:/automation/edgedriver_win64/msedgedriver.exe");
 //		driver = new EdgeDriver();
-		
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
 		driver.get("https://www.saucedemo.com/");
 		Assert.assertEquals(driver.getTitle(), "Swag Labs");
@@ -53,17 +56,20 @@ public class Login {
 	}
 	
 	
-	@SuppressWarnings("deprecation")
 	@Given("^user is on the login page$")
 	public void user_is_on_the_login_page() {
-		System.setProperty("webdriver.chrome.driver", "C://automation//chromedriver_win32//chromedriver.exe");
-		driver = new ChromeDriver();
+		ChromeOptions co = new ChromeOptions();
+		co.addArguments("--remote-allow-origins=*") ;
+		driver= new ChromeDriver(co);
+		
+//		System.setProperty("webdriver.chrome.driver", "C://automation//chromedriver_win32//chromedriver.exe");
+//		driver = new ChromeDriver();
 		
 //		System.setProperty("webdriver.edge.driver","C:/automation/edgedriver_win64/msedgedriver.exe");
 //		driver = new EdgeDriver();
-		
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
 		driver.get("https://www.saucedemo.com/");
 		Assert.assertEquals(driver.getTitle(), "Swag Labs");
