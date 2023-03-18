@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import io.cucumber.java.en.*;
 import pages.LoginPage;
 
+
 public class Login {
 	WebDriver driver = null;
 	LoginPage login;
@@ -41,13 +42,13 @@ public class Login {
 	    
 	}
 
-	@And("^user clicks on login button$")
+	@And("user clicks on login button")
 	public void user_clicks_on_login_button() {
 		login.clickLoginButton();
 	    
 	}
 
-	@Then("^user should be navigated to home page$")
+	@Then("user should be navigated to home page")
 	public void user_should_be_navigated_to_home_page() {
 		Assert.assertEquals(driver.getTitle(), "Swag Labs");
 		login.clickMenuButton();
@@ -56,7 +57,7 @@ public class Login {
 	}
 	
 	
-	@Given("^user is on the login page$")
+	@Given("user is on the login page")
 	public void user_is_on_the_login_page() {
 		ChromeOptions co = new ChromeOptions();
 		co.addArguments("--remote-allow-origins=*") ;
@@ -83,7 +84,7 @@ public class Login {
 		login.enterPassword(password);
 	}
 
-	@And("^user clicks on the login button$")
+	@And("user clicks on the login button")
 	public void user_clicks_on_the_login_button() {
 		login.clickLoginButton();
 	}

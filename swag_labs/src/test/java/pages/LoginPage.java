@@ -5,7 +5,7 @@ import static org.testng.Assert.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage {
+public class LoginPage{
 	WebDriver driver;
 	
 	By text_username_login=By.id("user-name");
