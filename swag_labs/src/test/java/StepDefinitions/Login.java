@@ -16,7 +16,7 @@ public class Login {
 	WebDriver driver = null;
 	LoginPage login;
 	
-	@Given("^user is on login page$")
+	@Given("user is on login page")
 	public void user_is_on_login_page() {
 		ChromeOptions co = new ChromeOptions();
 		co.addArguments("--remote-allow-origins=*") ;

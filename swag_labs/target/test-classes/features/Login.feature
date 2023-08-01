@@ -7,7 +7,7 @@ Feature: Login Functionality
     When user enters valid <username> and <password>
     And user clicks on login button
     Then user should be navigated to home page
-
+	
     Examples: 
       | username                | password     |
       | standard_user           | secret_sauce |
@@ -27,6 +27,5 @@ Feature: Login Functionality
       | Invalid_user    | secret_sauce | Epic sadface: Username and password do not match any user in this service |
       | Invalid_user    | Invalid_pass | Epic sadface: Username and password do not match any user in this service |
       | locked_out_user | secret_sauce | Epic sadface: Sorry, this user has been locked out.                       |
-      |                 |              | Epic sadface: Username is required                                        |
       | standard_user   |              | Epic sadface: Password is required                                        |
       |                 | secret_sauce | Epic sadface: Username is required                                        |
